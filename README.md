@@ -1,4 +1,4 @@
-<img width="1046" height="613" alt="image" src="https://github.com/user-attachments/assets/cf1eb356-5ecf-4717-9612-e5c474e92875" />Here is a **clean, simple, informative README setup + running guide**, written exactly in proper README format.
+<img width="1046" height="613" alt="image" src="https://github.com/user-attachments/assets/cf1eb356-5ecf-4717-9612-e5c474e92875" />The above is the workflow of the project
 
 ---
 
