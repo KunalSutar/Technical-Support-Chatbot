@@ -1,0 +1,3 @@
+Title: Login problems
+If you cannot login, reset your password using "Forgot password". If you get error 'invalid token' clear cookies or try Incognito mode.
+If 2FA is enabled, check your authenticator app code.

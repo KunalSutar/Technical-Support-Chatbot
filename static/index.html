@@ -1,0 +1,43 @@
+<!-- static/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>NullAxis Agent</title>
+  <style>
+    body{font-family: Arial; margin:20px;}
+    #chat{border:1px solid #ddd;padding:12px;height:360px;overflow:auto;}
+    .user{color:#0b6;margin:8px 0;}
+    .bot{color:#06b;margin:8px 0;}
+    .meta{font-size:0.85em;color:#666;}
+    input{width:72%;padding:8px;}
+    button{padding:8px 12px;}
+  </style>
+</head>
+<body>
+  <h2>NullAxis Customer Agent (local)</h2>
+  <div id="chat"></div>
+  <div style="margin-top:10px">
+    <input id="msg" type="text" placeholder="Enter customer inquiry..." />
+    <button onclick="send()">Send</button>
+  </div>
+
+  <script>
+    async function send(){
+      const input = document.getElementById('msg');
+      const text = input.value.trim();
+      if(!text) return;
+      const chat = document.getElementById('chat');
+      chat.innerHTML += '<div class="user"><b>You:</b> ' + text + '</div>';
+      input.value = '';
+      const form = new FormData();
+      form.append('message', text);
+      const res = await fetch('/chat', { method: 'POST', body: form });
+      const js = await res.json();
+      chat.innerHTML += '<div class="bot"><b>Agent:</b> ' + js.response + '</div>';
+      chat.innerHTML += '<div class="meta">Classification: ' + js.classification + ' | Escalate: ' + js.escalate + '</div><hr/>';
+      chat.scrollTop = chat.scrollHeight;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+
+streamlit
+requests
+
+scikit-learn
+numpy
+
+pydantic

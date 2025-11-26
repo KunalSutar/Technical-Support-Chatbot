@@ -1,0 +1,3 @@
+Title: Installation steps
+If you see an installation error with code 1001, restart your device and run the installer as admin.
+Make sure Python 3.9+ and pip are installed. For Windows run the .exe installer; for Mac run the .pkg.
